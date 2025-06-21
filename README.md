@@ -69,6 +69,8 @@ The Python version used for this project is `Python 3.11` to be compatible with 
 
 Follow the requirements for using TensorFlow [here](https://www.tensorflow.org/install/pip#macos)
 
+use `uv pip install tensorflow`
+
 - Make sure to use python versions `Python 3.9–3.12
 - pip version 19.0 or higher for Linux (requires manylinux2014 support) and Windows. pip version 20.3 or higher for macOS.
 - Windows Native Requires Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019
