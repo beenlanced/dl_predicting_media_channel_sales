@@ -31,12 +31,15 @@ The project
 The project contains the key elements:
 
 - `Deep Learning` for neural networks building,
+- `FastAPI` to render the app,
 - `Git` (version control),
+- `Httpx` to help make async HTTP requests
 - `Jupyter` python coded notebooks,
 - `Keras` to build autoencoder and layers,
 - `Matplotlib` visualization of spaces,
 - `Numpy` for arrays and numerical operations,
 - `Python` the standard modules,
+- `Pydantic` to define structure of incoming request body and validate input data,
 - `Scikit-Learn` for PCA and TSNE modules and to get training and test datasets,
 - `TensorFlow` to build autoencoder and layers
 
@@ -121,6 +124,18 @@ use `uv pip install tensorflow`
 1. **Run the Project**
 
    - Run `visualizing_latent_space.ipynb` in Jupyter Notebook UI or in VS code.
+
+   run the FastAPI application from your terminal:
+
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+   then open a web browser and got to
+
+   ```
+   http://127.0.0.1:8000
+   ```
 
 ---
 
