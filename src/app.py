@@ -17,9 +17,7 @@ import numpy as np
 # matplotlib.use() must be used before importing pyplot so placing it here
 matplotlib.use("Agg")
 
-import matplotlib.pyplot as plt
 import pandas as pd
-import uvicorn
 
 
 # Get Base path
@@ -65,9 +63,9 @@ async def get_plot(background_tasks: BackgroundTasks) -> Response:
          clean_data_path = str(Path(BASE_DATA_PATH, "clean_marketing_telecom.csv"))
          mkt_df = pd.read_csv(clean_data_path)
 
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         # If parsing fails, raise an HTTP exception
-        raise HTTPException(status_code=500, detail=f"Data File not found")
+        raise HTTPException(status_code=500, detail="Data File not found")
     
     except Exception as e:
         # Any other unexpected errors
@@ -94,7 +92,8 @@ async def read_root(request: Request) -> HTMLResponse:
     Returns:
         (HTMLResponse):  the index.html file page
     """
-    return templates.TemplateResponse("index.html", {"request": request})
+    #return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, "index.html")
 
 # Prediction endpoint that handles POST requests from the HTML form
 @app.post("/predict_sales", summary="Predict sales based on marketing budgets")
@@ -129,7 +128,6 @@ async def predict_sales_endpoint(
 
         # Normalize data 
         normalized_feature =  utils.normalize(prediction_data)
-    
         input_array = np.array(normalized_feature)
         input_data = np.expand_dims(input_array, axis=0)
 

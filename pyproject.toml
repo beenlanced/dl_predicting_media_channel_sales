@@ -146,3 +146,9 @@ dependencies = [
     "fastapi>=0.115.13",
     "uvicorn>=0.34.3",
 ]
+
+[dependency-groups]
+dev = ["pytest>=8.4.1"]
+
+[project.optional-dependencies]
+ci = ["pytest", "pytest-cov"]

@@ -30,7 +30,7 @@ def create_plot_image(mkt_df: pd.DataFrame) -> io.BytesIO:
     df.index = pd.to_datetime(df.index)
 
     color_palette = sns.color_palette("tab10") #seaborn color palette
-    ax = df["sales"].plot(figsize=(10, 5),
+    df["sales"].plot(figsize=(10, 5),
                                     color=color_palette[0],
                                     ms=1, lw=1,
                                     xlabel="Dates",
