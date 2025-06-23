@@ -113,37 +113,57 @@ use `uv pip install tensorflow`
    uv pip install -r pyproject.toml
    ```
 
-   or alternatively with the `requirements.txt` file
+### Running the App
 
-   ```bash
-   uv pip install -r requirements.txt
-   ```
+1. **Run the App**
 
-### Install the Jupyter Notebook `visualizing_latent_space.ipynb`
+   - Start the project by running the appropriate command at the `src` directory
+     ```
+     uv run fastapi dev app.py
+     ```
+     or if at root level
+     ```
+     uv run fastapi dev src/app.py
+     ```
+     or
+     ```
+     uv uvicorn app:app --reload
+     ```
 
-1. **Run the Project**
+2. **Access the Project's Web Interface**
 
-   - Run `visualizing_latent_space.ipynb` in Jupyter Notebook UI or in VS code.
+   - Open a web browser with the following url.
+     - http://127.0.0.1:8000/
 
-   run the FastAPI application from your terminal:
+3. **Running the application** by entering the following URL's in a browser
 
-   ```bash
-   uvicorn main:app --reload
-   ```
+   - The entry API: `http://127.0.0.1:8000/`
+       <p>
+           <img src="./imgs/entry_endpoint.png"/>
+       </p>
 
-   then open a web browser and got to
+     Entry point show that the app is working. A set of default budgets are present, but the user can changes these values. To get a prediction of the sales simply press the predict button and the predicted sales value using the Deep Learning prediction model created in this project will be displayed.
 
-   ```
-   http://127.0.0.1:8000
-   ```
+   - The Info API: `http://127.0.0.1:8000/info`
+       <p>
+           <img src="./imgs/info_endpoint.png"/>
+       </p>
+
+     Provides overview of the application
+
+   - The plot-forecast API: `http://127.0.0.1:8000/plot-sales`
+
+       <p>
+           <img src="./imgs/plot_sales_endpoint.png"/>
+       </p>
+
+     Plots the ingested telecommunication sales data at various start dates. This sales data is the target or label data used in the training and testing datasets used to build the prediction model.
 
 ---
 
 ## Special Notes
 
-- Including`requirements.txt` file as there are unique considerations when using the `TensorFlow` library. Plus, just in case you run into issues wth the `pyproject.toml` file there is the ability to use the requirements file as well to build the virtual environment.
-
-- Running this notebook took approximately 25 minutes to run using an Apple M4 Pro with macOS Sequoia. Depending on the processor(s) that you are running this time will vary.
+- Note the Docker file here also has to specify Python 3.11 because of the `TensorFlow` restrictions with Python 3.13 as of th time of this projects creation.
 
 ---
 
