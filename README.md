@@ -26,7 +26,7 @@ The project:
 - Conducts analysis of the predictive model results
 - Makes any improvements
 - Makes the predicative model accessible via a web application
-- Host the web application using the Amazon Web Services - Elastic Cloud Service (AWS-ECS).
+- Hosts the web application using the Amazon Web Services - Elastic Cloud Service (AWS-ECS).
 
 ---
 
@@ -34,21 +34,21 @@ The project:
 
 The project contains the key elements:
 
-- `AWS-ECS`, Amazon Web Services - Elastic Cloud Service, runs virtual machine to render the semantic search web application supplied by building a Docker container from a deployed Docker image from Docker hub.
+- `AWS-ECS`, Amazon Web Services - Elastic Cloud Service, runs virtual machine to render the semantic search web application supplied by building a Docker container from a deployed Docker image from Docker hub,
 - `CI/CD` automated pipeline created using `GitHub Actions`,
 - `Deep Learning` for neural networks building,
 - `FastAPI` to render the app,
 - `Functional tests` and `unit tests` using `pytest`,
 - `Git` (version control),
-- `Jupyter` python coded notebooks,
-- `Keras` to build autoencoder and layers,
+- `Jupyter` Python coded notebooks,
+- `Keras` to build nodes and layers,
 - `Matplotlib` visualization of spaces,
 - `Numpy` for arrays and numerical operations,
 - `Pandas` for dataframe usage,
 - `Python` the standard modules,
 - `Pydantic` to define structure of incoming request body and validate input data,
-- `Scikit-Learn` for PCA and TSNE modules and to get training and test datasets,
-- `TensorFlow` to build autoencoder and layers,
+- `Scikit-Learn` to get training and test datasets,
+- `TensorFlow` to build nodes and layers,
 - `Type` hinting using `Pylance`,
 - `Web application` using `FastAPI`,
 - `uv` package management including use of `ruff` for linting and formatting, and
@@ -158,7 +158,7 @@ use `uv pip install tensorflow`
            <img src="./imgs/entry_endpoint.png"/>
        </p>
 
-     Entry point show that the app is working. A set of default budgets are present, but the user can changes these values. To get a prediction of the sales simply press the predict button and the predicted sales value using the Deep Learning prediction model created in this project will be displayed.
+     Entry point show that the app is working. A set of default budgets are present, but the user can change these values. To get a prediction of the sales simply press the predict button and the predicted sales value using the Deep Learning prediction model created in this project will be displayed.
 
    - The Info API: `http://127.0.0.1:8000/info`
        <p>
@@ -179,7 +179,7 @@ use `uv pip install tensorflow`
 
 ## Special Notes
 
-- Note the Docker file here also has to specify Python 3.11 because of the `TensorFlow` restrictions with Python 3.13 as of the time of this projects creation.
+- Note the Docker file here also has to specify Python 3.11 because of the `TensorFlow` restrictions with Python 3.13 as of the time of this project's creation.
 
 ---
 
