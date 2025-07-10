@@ -50,9 +50,8 @@ The project contains the key elements:
 - `Scikit-Learn` to get training and test datasets,
 - `TensorFlow` to build nodes and layers,
 - `Type` hinting using `Pylance`,
-- `Web application` using `FastAPI`,
-- `uv` package management including use of `ruff` for linting and formatting, and
-- ***
+- `Web application` using `FastAPI`, and
+- `uv` package management including use of `ruff` for linting and formatting
 
 ## Tech Stack
 
