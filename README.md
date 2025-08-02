@@ -109,7 +109,7 @@ use `uv pip install tensorflow`
 
 3. Activate the virtual environment: `.venv`
 
-   On macOs and Linux:
+   On macOS and Linux:
 
    ```bash
    source .venv/bin/activate #mac
